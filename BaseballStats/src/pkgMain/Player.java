@@ -59,16 +59,15 @@ public Player(String playername) {
 	}
 	
 	//Calculates batting average with hits/at bats
-	public double battingAverage(int ab, int hits) {
+	public static double battingAverage(double ab, double hits) {
 		double ba;
 		ba = hits/ab;
 		return ba;
 }
 
 	//Calculates on base percentage with (hits+walks)/(hits+walks+at bats)
-	public double onbasepercentage(int hits, int bb, int ab) {
-		double obp;
-		obp = (hits+bb)/(hits+bb+ab);
+	public static double onbasepercentage(double hits, double bb, double ab) {
+		double obp = (hits+bb)/(hits+bb+ab);
 		return obp;
 	}
 
@@ -76,14 +75,15 @@ public Player(String playername) {
 	 * I used runs because hits does not translate into going onto the bases but a run does.
 	 * I used it at a single because we do not have an attribute for a single base taken.
 	 */
-	public double sluggingpercentage(int runs, int doubles, int triples, int ab, int homerun) {
-		double sp;
-		sp = (runs+doubles+triples+homerun)/ab;
+	public static double sluggingpercentage(int runs, int doubles, int triples, double ab, int homerun) {
+		
+		double sp = (runs + doubles + triples + homerun) / ab;
+		
 		return sp;
 	}
 	
 	//Calculates on base slugging with slugging percentage + on base percentage
-	public double onbaseslugging(double sp, double obp) {
+	public static double onbaseslugging(double sp, double obp) {
 		double obs;
 		obs = (sp+obp);
 		return obs;

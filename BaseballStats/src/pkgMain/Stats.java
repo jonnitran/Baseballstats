@@ -32,10 +32,20 @@ public class Stats {
 		System.out.print("Walks: ");
 		p1.setBb(scan.nextInt());
 		
-		double battingaverage = p1.battingAverage(p1.ab,p1.h);
-		double onbasepercentage = p1.onbasepercentage(p1.h, p1.bb, p1.ab);
-		double sluggingpercentage = p1.sluggingpercentage(p1.h,p1._2b,p1._3b,p1.ab,p1.hr);
-		double onbaseslugging = p1.onbaseslugging(sluggingpercentage, onbasepercentage);
+		scan.close();
+		
+		System.out.println(p1.get_2b());
+		System.out.println(p1.get_3b());
+		System.out.println(p1.getAb());
+		System.out.println(p1.getBb());
+		
+		
+		
+		
+		double battingaverage = Player.battingAverage(p1.ab,p1.h);
+		double onbasepercentage = Player.onbasepercentage(p1.h, p1.bb, p1.ab);
+		double sluggingpercentage = Player.sluggingpercentage(p1.h,p1._2b,p1._3b,p1.ab,p1.hr);
+		double onbaseslugging = Player.onbaseslugging(sluggingpercentage, onbasepercentage);
 		int totalbases = p1.totalbases(p1._2b, p1._3b, p1.hr, p1.bb, p1.r);
 		
 		System.out.println("Batting average: " + battingaverage);
